@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상스공방 - 매일 아침 구워 당일 배송하는 수제 쿠키</title>
+  <meta name="description" content="매일 아침 유기농 재료와 프랑스산 고메 버터로 정성스레 구워 당일 배송하는 수제 쿠키 전문 공방 '상스공방'입니다. 카카오톡으로 간편하게 주문해 보세요.">
+  <meta property="og:title" content="상스공방 - 매일 아침 구워 당일 배송합니다">
+  <meta property="og:description" content="초코칩 쿠키, 말차 쿠키, 솔티드 캐러멜 쿠키 등 상스공방의 대표 수제 디저트를 만나보세요.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#AD9466">
+
+  <!-- Google Web Fonts: Gowun Dodum (부드럽고 둥근 감성 돋움) & Gowun Batang (따뜻한 명조) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Warm Bakery Color System */
+      --bg-cream: #FDFBF8;
+      --bg-card: #FFFFFF;
+      --bg-subtle: #F6F1EA;
+      --bg-hero-beige: #AD9466; /* 따뜻한 베이지 */
+      --bg-hero-beige-light: #BFA87E;
+      
+      --color-brown-950: #1C0F08;
+      --color-brown-900: #2C1810;
+      --color-brown-800: #46281B;
+      --color-brown-700: #6B4226;
+      --color-brown-600: #8C5E3C;
+      --color-brown-500: #A87852;
+      --color-brown-300: #DECFC2;
+      --color-brown-100: #F4ECE4;
+
+      /* High-contrast Black Order Button */
+      --color-btn-black: #000000;
+      --color-btn-black-hover: #1F1F1F;
+      --color-btn-text: #FFFFFF;
+
+      --color-accent-caramel: #B87333;
+      --color-accent-gold: #C69255;
+      
+      /* Typography: 부드러운 고운 돋움 & 고운 바탕 서체 적용 */
+      --font-body: 'Gowun Dodum', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-display: 'Gowun Batang', 'Gowun Dodum', serif, -apple-system;
+      
+      --shadow-sm: 0 1px 3px rgba(44, 24, 16, 0.05);
+      --shadow-md: 0 4px 14px rgba(44, 24, 16, 0.08);
+      --shadow-lg: 0 12px 28px -4px rgba(44, 24, 16, 0.12);
+      --shadow-lift: 0 18px 36px -4px rgba(70, 40, 27, 0.16), 0 6px 16px -2px rgba(70, 40, 27, 0.08);
+      
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--color-brown-900);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      letter-spacing: -0.015em;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Top Bar */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(253, 251, 248, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--color-brown-300);
+      transition: all 0.2s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 16px;
+    }
+
+    .brand-group {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-brown-950);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      line-height: 1.2;
+    }
+
+    .brand-symbol {
+      width: 20px;
+      height: 20px;
+      color: var(--color-brown-700);
+    }
+
+    .brand-tagline-mobile {
+      font-size: 11.5px;
+      color: var(--color-brown-600);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-link {
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--color-brown-700);
+      text-decoration: none;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      color: var(--color-brown-950);
+    }
+
+    /* Primary Order Button: Black Background, White Font, Bold & Eye-Catching */
+    .btn-order-black {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--color-btn-black);
+      color: var(--color-btn-text);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      cursor: pointer;
+      line-height: 1.2;
+    }
+
+    .btn-order-black:hover {
+      background-color: var(--color-btn-black-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      color: #FFFFFF;
+    }
+
+    .btn-order-black:active {
+      transform: translateY(0);
+    }
+
+    .btn-hero-lg {
+      font-size: 17.5px;
+      padding: 16px 36px;
+      border-radius: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Full-Width Hero Section (#AD9466 Warm Beige) */
+    .full-hero-section {
+      width: 100%;
+      background-color: var(--bg-hero-beige);
+      background-image: radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.16) 0%, transparent 60%),
+                        linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.08) 100%);
+      color: #FFFFFF;
+      padding: 64px 0 72px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .full-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .full-hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 2;
+    }
+
+    .full-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(36, 20, 13, 0.22);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+      color: #FFFFFF;
+    }
+
+    .full-hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #FFDF80;
+    }
+
+    /* Grand Headline: 매일 아침 구워 당일 배송합니다. */
+    .full-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5.2vw, 54px);
+      font-weight: 700;
+      line-height: 1.22;
+      color: var(--color-brown-950);
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+      margin-bottom: 20px;
+      word-break: keep-all;
+    }
+
+    .full-hero-desc {
+      font-size: 16.5px;
+      line-height: 1.75;
+      color: #2F1E14;
+      margin-bottom: 32px;
+      max-width: 540px;
+      word-break: keep-all;
+      font-weight: 400;
+    }
+
+    .full-hero-cta-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .btn-hero-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--color-brown-950);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-hero-outline:hover {
+      background: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .full-hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(44, 24, 16, 0.18);
+      width: 100%;
+    }
+
+    .hero-feat-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #28170D;
+    }
+
+    .hero-feat-item svg {
+      width: 17px;
+      height: 17px;
+      color: var(--color-brown-950);
+      flex-shrink: 0;
+    }
+
+    .full-hero-media {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(44, 24, 16, 0.25);
+      border: 3px solid rgba(255, 255, 255, 0.45);
+      background-color: #9A8256;
+      aspect-ratio: 4 / 3;
+    }
+
+    .full-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .full-hero-media:hover img {
+      transform: scale(1.03);
+    }
+
+    .hero-media-glass-tag {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      background: rgba(28, 15, 8, 0.82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #FFFFFF;
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #4ade80;
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-kicker {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--color-brown-600);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.4vw, 36px);
+      font-weight: 700;
+      color: var(--color-brown-950);
+      margin-bottom: 12px;
+      word-break: keep-all;
+    }
+
+    .section-subtitle {
+      font-size: 15.5px;
+      color: var(--color-brown-700);
+      max-width: 580px;
+      margin: 0 auto;
+      word-break: keep-all;
+    }
+
+    /* Product Cards & Hover Lift Effect */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    /* Card Hover Lift Effect: 살짝 올라오는 효과 */
+    .product-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-brown-300);
+      box-shadow: 0 4px 14px rgba(44, 24, 16, 0.05);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.28s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lift);
+      border-color: var(--bg-hero-beige);
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background-color: var(--color-brown-100);
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-card:hover .card-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(28, 15, 8, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 12.5px;
+      color: var(--color-brown-600);
+      font-weight: 500;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-brown-950);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--color-brown-700);
+      margin-bottom: 18px;
+      word-break: keep-all;
+      flex-grow: 1;
+    }
+
+    .card-ingredients {
+      padding: 12px 14px;
+      background-color: var(--bg-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      color: var(--color-brown-800);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      line-height: 1.45;
+      border: 1px solid rgba(173, 148, 102, 0.2);
+    }
+
+    .card-ingredients svg {
+      width: 15px;
+      height: 15px;
+      color: var(--color-brown-600);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 18px;
+      border-top: 1px solid var(--color-brown-100);
+      margin-top: auto;
+      gap: 12px;
+    }
+
+    .card-price-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-price-label {
+      font-size: 11.5px;
+      color: var(--color-brown-600);
+    }
+
+    .card-price {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--color-brown-950);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+
+    .card-price-unit {
+      font-size: 15px;
+      font-weight: 500;
+      margin-left: 2px;
+    }
+
+    /* Quantity Stepper & Selection Button */
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .qty-control {
+      display: flex;
+      align-items: center;
+      background: var(--bg-subtle);
+      border: 1px solid var(--color-brown-300);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      height: 38px;
+    }
+
+    .qty-btn {
+      background: none;
+      border: none;
+      width: 32px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-brown-800);
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      user-select: none;
+    }
+
+    .qty-btn:hover {
+      background: var(--color-brown-300);
+    }
+
+    .qty-display {
+      min-width: 28px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--color-brown-950);
+    }
+
+    /* Order Guide Banner & Calculation Box */
+    .order-summary-box {
+      margin-top: 44px;
+      background: var(--bg-card);
+      border: 1.5px solid var(--bg-hero-beige);
+      border-radius: var(--radius-md);
+      padding: 26px 30px;
+      box-shadow: 0 8px 24px rgba(44, 24, 16, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .order-summary-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .order-summary-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-brown-950);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .order-summary-desc {
+      font-size: 14px;
+      color: var(--color-brown-700);
+    }
+
+    .order-summary-pricing {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .order-total-count {
+      font-size: 14px;
+      color: var(--color-brown-600);
+    }
+
+    .order-total-price {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-brown-950);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Craftsmanship & Brand Promise */
+    .promise-section {
+      background-color: var(--bg-subtle);
+      border-top: 1px solid var(--color-brown-300);
+      border-bottom: 1px solid var(--color-brown-300);
+    }
+
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .promise-card {
+      background: var(--bg-card);
+      padding: 30px 26px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(140, 94, 60, 0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease;
+    }
+
+    .promise-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .promise-num {
+      font-family: var(--font-display);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--color-accent-caramel);
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+
+    .promise-title {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--color-brown-950);
+      margin-bottom: 10px;
+    }
+
+    .promise-desc {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--color-brown-700);
+      word-break: keep-all;
+    }
+
+    /* How to Order / Guide Section */
+    .order-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 36px;
+    }
+
+    .step-item {
+      background: var(--bg-card);
+      border: 1px solid var(--color-brown-300);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--color-brown-950);
+      color: #FFF;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .step-heading {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-brown-950);
+      margin-bottom: 8px;
+    }
+
+    .step-text {
+      font-size: 14px;
+      color: var(--color-brown-700);
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    /* Big Order Call To Action Banner */
+    .cta-banner-section {
+      background: linear-gradient(145deg, #24140D 0%, #170A04 100%);
+      color: #FFFFFF;
+      padding: 64px 0;
+      border-radius: var(--radius-lg);
+      margin: 44px auto;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(173, 148, 102, 0.3);
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .cta-kicker {
+      font-size: 13.5px;
+      letter-spacing: 0.1em;
+      color: #E0C79B;
+      margin-bottom: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.8vw, 38px);
+      font-weight: 700;
+      line-height: 1.32;
+      margin-bottom: 16px;
+      word-break: keep-all;
+      color: #FFFFFF;
+    }
+
+    .cta-desc {
+      font-size: 15.5px;
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      word-break: keep-all;
+    }
+
+    .cta-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .btn-copy-order {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.14);
+      color: #FFF;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 16px 26px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-body);
+    }
+
+    .btn-copy-order:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #1F110A;
+      color: #E2D7CE;
+      padding: 64px 0 40px;
+      border-top: 1px solid #351F14;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand-desc {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #C0B1A4;
+      margin-bottom: 22px;
+      max-width: 330px;
+      word-break: keep-all;
+    }
+
+    .footer-heading {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .footer-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .footer-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: #C0B1A4;
+      line-height: 1.55;
+    }
+
+    .footer-info-item svg {
+      width: 17px;
+      height: 17px;
+      color: #E0C79B;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .footer-info-item strong {
+      color: #FFFFFF;
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .footer-social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #E2D7CE;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 9px 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: all 0.2s ease;
+      width: fit-content;
+    }
+
+    .footer-social-link:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    .footer-social-link svg {
+      width: 17px;
+      height: 17px;
+      color: #E1306C;
+    }
+
+    .footer-bottom {
+      padding-top: 28px;
+      border-top: 1px solid #351F14;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 12.5px;
+      color: #8E7D70;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* Modal for Quick Order Sheet */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--bg-card);
+      width: 100%;
+      max-width: 480px;
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--color-brown-300);
+      position: relative;
+      animation: modalPop 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      background: none;
+      border: none;
+      color: var(--color-brown-600);
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close-btn:hover {
+      background: var(--bg-subtle);
+      color: var(--color-brown-950);
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--color-brown-950);
+      margin-bottom: 6px;
+    }
+
+    .modal-subtitle {
+      font-size: 13.5px;
+      color: var(--color-brown-700);
+      margin-bottom: 20px;
+    }
+
+    .order-preview-box {
+      background: var(--bg-subtle);
+      border: 1px solid var(--color-brown-300);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--color-brown-950);
+      white-space: pre-wrap;
+      margin-bottom: 22px;
+      user-select: all;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1C0F08;
+      color: #FFF;
+      padding: 14px 26px;
+      border-radius: var(--radius-sm);
+      font-size: 14.5px;
+      font-weight: 500;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      z-index: 200;
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 900px) {
+      .full-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      
+      .product-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+
+      .promise-grid, .order-steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        height: 64px;
+      }
+
+      .brand-name {
+        font-size: 21px;
+      }
+
+      .full-hero-section {
+        padding: 44px 0 54px;
+      }
+
+      .full-hero-title {
+        font-size: 30px;
+      }
+
+      .full-hero-cta-wrap {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn-order-black, .btn-hero-outline {
+        width: 100%;
+      }
+
+      .full-hero-features {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .order-summary-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .order-summary-pricing {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .cta-btn-group {
+        flex-direction: column;
+      }
+
+      .btn-copy-order {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Brand Zone -->
+        <a href="#top" class="brand-group" aria-label="상스공방 홈">
+          <div class="brand-name">
+            <svg class="brand-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
+              <path d="M8.5 8.5v.01" />
+              <path d="M11.5 15.5v.01" />
+              <path d="M15.5 11.5v.01" />
+              <path d="M8.5 13.5v.01" />
+            </svg>
+            <span>상스공방</span>
+          </div>
+          <span class="brand-tagline-mobile">매일 아침 구워 당일 배송하는 프리미엄 수제 쿠키</span>
+        </a>
+
+        <!-- Zone 2: Navigation Links -->
+        <nav class="nav-links" aria-label="메인 메뉴">
+          <a href="#products" class="nav-link">대표 상품</a>
+          <a href="#story" class="nav-link">공방 철학</a>
+          <a href="#order-guide" class="nav-link">주문 안내</a>
+          <a href="#contact" class="nav-link">운영 정보</a>
+        </nav>
+
+        <!-- Zone 3: Black Background Order Button -->
+        <div class="header-action">
+          <button type="button" class="btn-order-black" onclick="handleKakaoOrder(event)">
+            <span>주문하기</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 풀 너비 히어로 영역 (따뜻한 베이지 #AD9466 배경) -->
+    <section class="full-hero-section">
+      <div class="container">
+        <div class="full-hero-grid">
+          <!-- Text Content -->
+          <div class="full-hero-content">
+            <div class="full-hero-badge">
+              <span class="full-hero-dot"></span>
+              <span>SANGS ATELIER · 상스공방</span>
+            </div>
+
+            <!-- 대형 헤드라인: 매일 아침 구워 당일 배송합니다. -->
+            <h1 class="full-hero-title">
+              매일 아침 구워<br>당일 배송합니다.
+            </h1>
+
+            <p class="full-hero-desc">
+              타협하지 않는 100% 프랑스산 발효 버터와 유기농 밀가루, 24시간 저온 숙성의 깊은 풍미.<br>
+              오븐에서 갓 구워낸 가장 바삭하고 쫀득한 순간을 정성껏 포장하여 고객님의 문 앞까지 안전하게 당일 배송해 드립니다.
+            </p>
+
+            <div class="full-hero-cta-wrap">
+              <!-- 검정색 배경에 흰색 폰트, 크고 눈에 띄는 주문하기 버튼 -->
+              <button type="button" class="btn-order-black btn-hero-lg" onclick="handleKakaoOrder(event)">
+                <span>주문하기</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+
+              <a href="#products" class="btn-hero-outline">
+                <span>대표 쿠키 3선 보기</span>
+              </a>
+            </div>
+
+            <!-- 신뢰 포인트 리스트 -->
+            <div class="full-hero-features">
+              <div class="hero-feat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>당일 새벽 반죽 & 오전 10시 구움</span>
+              </div>
+              <div class="hero-feat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>방부제·인공색소·합성첨가물 무첨가</span>
+              </div>
+              <div class="hero-feat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>전국 안전 신선 배송 & 예약 픽업</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Bakery Image -->
+          <div class="full-hero-media">
+            <img 
+              src="/images/hero_bakery_atelier_1793359094408.jpg" 
+              onerror="this.onerror=null; this.src='/src/assets/images/hero_bakery_atelier_1793359094408.jpg';" 
+              alt="상스공방 수제 쿠키 아틀리에 전경" 
+              loading="eager"
+            />
+            <div class="hero-media-glass-tag">
+              <span class="live-dot"></span>
+              <span>Daily Fresh Baked · 당일 구움 한정 수량</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Signature Collection</span>
+          <h2 class="section-title">상스공방의 대표 시그니처 3선</h2>
+          <p class="section-subtitle">
+            한 입 베어 무는 순간 퍼지는 고소한 버터의 풍미. 가장 사랑받는 대표 수제 쿠키를 만나보세요.
+          </p>
+        </div>
+
+        <!-- 3 Product Cards with Hover Lift Effect (마우스를 올리면 살짝 올라오는 효과) -->
+        <div class="product-grid">
+
+          <!-- Card 1: 초코칩 쿠키 -->
+          <article class="product-card" data-id="chocochip" data-name="초코칩 쿠키" data-price="3800">
+            <div class="card-img-wrapper">
+              <span class="card-badge">인기 No.1</span>
+              <img 
+                src="/images/cookie_chocolate_chip_1793359092434.jpg" 
+                onerror="this.onerror=null; this.src='/src/assets/images/cookie_chocolate_chip_1793359092434.jpg';" 
+                alt="초코칩 쿠키"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Best Seller 01</span>
+                <span>클래식 르뱅 스타일</span>
+              </div>
+              <h3 class="card-title">초코칩 쿠키</h3>
+              <p class="card-desc">
+                벨기에산 깔리바우트 다크 초콜릿 청크를 듬뿍 넣어 겉은 바삭하고 속은 묵직하게 쫀득한 상스공방의 대표 시그니처 쿠키입니다.
+              </p>
+
+              <div class="card-ingredients">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>프랑스 발효버터 100%, 칼리바우트 다크 청크, 구운 호두</span>
+              </div>
+
+              <div class="card-footer">
+                <div class="card-price-wrap">
+                  <span class="card-price-label">개당 가격</span>
+                  <div class="card-price">3,800<span class="card-price-unit">원</span></div>
+                </div>
+
+                <div class="card-actions">
+                  <div class="qty-control" aria-label="수량 조절">
+                    <button type="button" class="qty-btn" onclick="changeQty('chocochip', -1)" aria-label="감소">-</button>
+                    <span class="qty-display" id="qty-chocochip">0</span>
+                    <button type="button" class="qty-btn" onclick="changeQty('chocochip', 1)" aria-label="증가">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: 말차 쿠키 -->
+          <article class="product-card" data-id="matcha" data-name="말차 쿠키" data-price="4200">
+            <div class="card-img-wrapper">
+              <span class="card-badge">제주 유기농</span>
+              <img 
+                src="/images/cookie_matcha_1793359092563.jpg" 
+                onerror="this.onerror=null; this.src='/src/assets/images/cookie_matcha_1793359092563.jpg';" 
+                alt="말차 쿠키"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Signature 02</span>
+                <span>제주 유기농 말차</span>
+              </div>
+              <h3 class="card-title">말차 쿠키</h3>
+              <p class="card-desc">
+                제주 첫물 유기농 말차의 그윽하고 쌉싸름한 깊은 향과 부드럽고 달콤한 스위스 화이트 초콜릿의 황홀한 밸런스를 자랑합니다.
+              </p>
+
+              <div class="card-ingredients">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>제주 유기농 말차 가루, 스위스 화이트 초코, 고소한 마카다미아</span>
+              </div>
+
+              <div class="card-footer">
+                <div class="card-price-wrap">
+                  <span class="card-price-label">개당 가격</span>
+                  <div class="card-price">4,200<span class="card-price-unit">원</span></div>
+                </div>
+
+                <div class="card-actions">
+                  <div class="qty-control" aria-label="수량 조절">
+                    <button type="button" class="qty-btn" onclick="changeQty('matcha', -1)" aria-label="감소">-</button>
+                    <span class="qty-display" id="qty-matcha">0</span>
+                    <button type="button" class="qty-btn" onclick="changeQty('matcha', 1)" aria-label="증가">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: 솔티드 캐러멜 쿠키 -->
+          <article class="product-card" data-id="caramel" data-name="솔티드 캐러멜 쿠키" data-price="4200">
+            <div class="card-img-wrapper">
+              <span class="card-badge">단짠 정석</span>
+              <img 
+                src="/images/cookie_salted_caramel_1793359093992.jpg" 
+                onerror="this.onerror=null; this.src='/src/assets/images/cookie_salted_caramel_1793359093992.jpg';" 
+                alt="솔티드 캐러멜 쿠키"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Favorite 03</span>
+                <span>수제 생카라멜 & 말돈 소금</span>
+              </div>
+              <h3 class="card-title">솔티드 캐러멜 쿠키</h3>
+              <p class="card-desc">
+                공방에서 정성껏 직접 끓여낸 수제 버터 카라멜 리본에 영국산 말돈 소금을 얹어 첫 입부터 끝까지 완벽한 감칠맛의 단짠을 전합니다.
+              </p>
+
+              <div class="card-ingredients">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>수제 바닐라 생카라멜, 영국 말돈 소금 플레익스, 구운 피칸</span>
+              </div>
+
+              <div class="card-footer">
+                <div class="card-price-wrap">
+                  <span class="card-price-label">개당 가격</span>
+                  <div class="card-price">4,200<span class="card-price-unit">원</span></div>
+                </div>
+
+                <div class="card-actions">
+                  <div class="qty-control" aria-label="수량 조절">
+                    <button type="button" class="qty-btn" onclick="changeQty('caramel', -1)" aria-label="감소">-</button>
+                    <span class="qty-display" id="qty-caramel">0</span>
+                    <button type="button" class="qty-btn" onclick="changeQty('caramel', 1)" aria-label="증가">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Live Order Calculation Box & Black Order Button -->
+        <div class="order-summary-box">
+          <div class="order-summary-info">
+            <div class="order-summary-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+              <span>주문 선택 내역</span>
+            </div>
+            <p class="order-summary-desc" id="orderItemsSummary">
+              원하시는 쿠키 수량을 선택해 주세요. (6개 이상 선택 시 고급 선물 상자 무료 포장)
+            </p>
+          </div>
+
+          <div class="order-summary-pricing">
+            <div>
+              <span class="order-total-count" id="totalCountText">총 0개 선택</span>
+              <div class="order-total-price" id="totalPriceText">0원</div>
+            </div>
+            <!-- 검정색 배경 흰색 폰트 주문하기 버튼 -->
+            <button type="button" class="btn-order-black btn-hero-lg" onclick="openOrderModal()">
+              <span>주문하기</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Atelier Promises Section -->
+    <section id="story" class="section promise-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Our Philosophy</span>
+          <h2 class="section-title">상스공방이 지키는 세 가지 원칙</h2>
+          <p class="section-subtitle">
+            느린 시간과 정직한 손길로 진심을 담아 구워냅니다.
+          </p>
+        </div>
+
+        <div class="promise-grid">
+          <div class="promise-card">
+            <span class="promise-num">PRINCIPLE 01</span>
+            <h3 class="promise-title">순수 자연 재료의 힘</h3>
+            <p class="promise-desc">
+              타협하지 않는 100% 프랑스산 AOP 고메 발효 버터와 유기농 밀가루, 무항생제 신선란만을 사용하여 속이 편안하고 깔끔합니다.
+            </p>
+          </div>
+
+          <div class="promise-card">
+            <span class="promise-num">PRINCIPLE 02</span>
+            <h3 class="promise-title">24시간 저온 숙성의 미학</h3>
+            <p class="promise-desc">
+              반죽 후 바로 굽지 않고 영하의 저온에서 24시간 동안 충분히 숙성하여 버터의 풍미를 응축하고 특유의 쫀득한 르뱅 텍스처를 완성합니다.
+            </p>
+          </div>
+
+          <div class="promise-card">
+            <span class="promise-num">PRINCIPLE 03</span>
+            <h3 class="promise-title">당일 생산 & 당일 발송 원칙</h3>
+            <p class="promise-desc">
+              보존료나 합성첨가물을 일체 넣지 않습니다. 매일 아침 오븐에서 구워낸 가장 신선하고 바삭한 상태로 당일 안전하게 출고합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Guide Section -->
+    <section id="order-guide" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Easy Kakao Order</span>
+          <h2 class="section-title">카카오톡으로 간편하게 주문하는 법</h2>
+          <p class="section-subtitle">
+            원하는 쿠키 종류와 수량을 선택하신 후 카카오톡 채널로 편하게 문의주시면 친절히 안내해 드립니다.
+          </p>
+        </div>
+
+        <div class="order-steps-grid">
+          <div class="step-item">
+            <div class="step-badge">1</div>
+            <h3 class="step-heading">수량 및 상품 선택</h3>
+            <p class="step-text">
+              초코칩, 말차, 솔티드 캐러멜 쿠키 중 원하시는 개수를 선택하세요. (세트 구성이나 답례품 상담도 가능합니다.)
+            </p>
+          </div>
+
+          <div class="step-item">
+            <div class="step-badge">2</div>
+            <h3 class="step-heading">'주문하기' 버튼 클릭</h3>
+            <p class="step-text">
+              주문하기 버튼을 누르면 작성된 주문서가 자동 완성되어 상스공방 카카오톡 채널 1:1 채팅창으로 바로 연결됩니다.
+            </p>
+          </div>
+
+          <div class="step-item">
+            <div class="step-badge">3</div>
+            <h3 class="step-heading">당일 배송 및 픽업</h3>
+            <p class="step-text">
+              택배 수령 주소 또는 매장 방문 픽업 시간을 남겨주시면 갓 구운 쿠키를 신선하게 포장해 보내드립니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Big CTA Card with Black Order Button -->
+        <div class="cta-banner-section">
+          <div class="cta-content">
+            <div class="cta-kicker">Same-Day Delivery</div>
+            <h3 class="cta-title">
+              매일 아침 구워 당일 배송하는<br>상스공방 수제 쿠키를 맛보세요
+            </h3>
+            <p class="cta-desc">
+              카카오톡 채널 '상스공방'으로 편하게 메시지를 남겨주시면 실시간으로 주문 접수 및 배송 일정을 친절하게 안내해 드립니다.
+            </p>
+            <div class="cta-btn-group">
+              <!-- 검정색 배경 흰색 폰트 주문하기 버튼 -->
+              <button type="button" class="btn-order-black btn-hero-lg" onclick="openOrderModal()">
+                <span>주문하기</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <button type="button" class="btn-copy-order" onclick="copyKakaoId()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                </svg>
+                <span>채널 ID 복사하기 (@상스공방)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with Operating Hours, Contact Info, Instagram Link -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Atelier Brand Info -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-title">상스공방 (SANGS ATELIER)</div>
+          <p class="footer-brand-desc">
+            매일 아침 유기농 재료와 프랑스산 버터로 정성스레 구워 당일 배송하는 수제 디저트 전문 공방입니다. 일상 속 따뜻한 온기와 달콤함을 전합니다.
+          </p>
+          <!-- Instagram Link -->
+          <a href="https://instagram.com/sangs_atelier" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="상스공방 인스타그램 방문하기">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span>@sangs_atelier 인스타그램 팔로우</span>
+          </a>
+        </div>
+
+        <!-- Column 2: Operating Hours -->
+        <div>
+          <div class="footer-heading">운영 시간 (Business Hours)</div>
+          <ul class="footer-info-list">
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <strong>화요일 - 토요일:</strong> 11:00 ~ 19:00
+              </div>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <div>
+                <strong>정기 휴무:</strong> 매주 일요일 / 월요일
+              </div>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <div>
+                당일 생산분 소진 시 조기 마감될 수 있습니다. (인스타그램 실시간 공지)
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact & Location Info -->
+        <div>
+          <div class="footer-heading">연락처 및 공방 위치</div>
+          <ul class="footer-info-list">
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <strong>전화 문의:</strong> 010-8254-1903
+              </div>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <strong>이메일:</strong> sangs.atelier@gmail.com
+              </div>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>공방 주소:</strong> 서울특별시 마포구 연남동 241-15 1층 상스공방
+              </div>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <div>
+                <strong>카카오톡 채널:</strong> @상스공방
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 상스공방 (Sangs Atelier). All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <span>매일 아침 구워 당일 배송</span>
+          <span aria-hidden="true">·</span>
+          <span>사업자등록번호: 214-12-89201</span>
+          <span aria-hidden="true">·</span>
+          <span>대표: 이상스</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal: Kakao Order Preview & Sheet -->
+  <div class="modal-backdrop" id="orderModal" onclick="handleBackdropClick(event)">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close-btn" onclick="closeOrderModal()" aria-label="닫기">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <h3 class="modal-title" id="modalTitle">카카오톡 간편 주문서</h3>
+      <p class="modal-subtitle">
+        작성된 주문서를 복사하여 상스공방 카카오톡 채널에 전달해 주시면 가장 빠르게 당일 주문 접수가 완료됩니다.
+      </p>
+
+      <div class="order-preview-box" id="modalOrderText">
+[상스공방 수제 쿠키 주문서]
+- 상품을 선택해주세요.
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-order-black btn-hero-lg" style="width: 100%; justify-content: center;" onclick="copyAndOpenKakao()">
+          <span>주문서 복사하고 카카오톡 열기</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <a href="https://pf.kakao.com" target="_blank" rel="noopener noreferrer" class="btn-hero-outline" style="width: 100%; justify-content: center; text-decoration: none;">
+          <span>카카오톡 채널 바로 가기</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toastNotification">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+    <span id="toastMessage">주문서가 클립보드에 복사되었습니다!</span>
+  </div>
+
+  <!-- JavaScript: Pure Vanilla JS, No Build Step Needed -->
+  <script>
+    // Product Data
+    const products = {
+      chocochip: { name: '초코칩 쿠키', price: 3800, qty: 0 },
+      matcha: { name: '말차 쿠키', price: 4200, qty: 0 },
+      caramel: { name: '솔티드 캐러멜 쿠키', price: 4200, qty: 0 }
+    };
+
+    // Update Quantity
+    function changeQty(productId, delta) {
+      if (!products[productId]) return;
+      
+      const newQty = Math.max(0, products[productId].qty + delta);
+      products[productId].qty = newQty;
+      
+      const el = document.getElementById(`qty-${productId}`);
+      if (el) {
+        el.textContent = newQty;
+      }
+      
+      updateOrderCalculations();
+    }
+
+    // Format KRW currency
+    function formatWon(num) {
+      return num.toLocaleString('ko-KR') + '원';
+    }
+
+    // Update Totals and UI
+    function updateOrderCalculations() {
+      let totalCount = 0;
+      let totalPrice = 0;
+      const selectedItems = [];
+
+      for (const [key, item] of Object.entries(products)) {
+        if (item.qty > 0) {
+          totalCount += item.qty;
+          totalPrice += item.qty * item.price;
+          selectedItems.push(`${item.name} ${item.qty}개`);
+        }
+      }
+
+      const totalCountText = document.getElementById('totalCountText');
+      const totalPriceText = document.getElementById('totalPriceText');
+      const summaryText = document.getElementById('orderItemsSummary');
+
+      if (totalCountText) totalCountText.textContent = `총 ${totalCount}개 선택`;
+      if (totalPriceText) totalPriceText.textContent = formatWon(totalPrice);
+
+      if (summaryText) {
+        if (totalCount === 0) {
+          summaryText.textContent = '원하시는 쿠키 수량을 선택해 주세요. (6개 이상 선택 시 고급 선물 상자 무료 포장)';
+        } else {
+          const packagingNote = totalCount >= 6 ? ' [선물 상자 무료 포장 대상]' : ' (6개 구매 시 무료 선물 상자 포장)';
+          summaryText.textContent = `선택 상품: ${selectedItems.join(', ')}${packagingNote}`;
+        }
+      }
+
+      updateModalText(totalCount, totalPrice, selectedItems);
+    }
+
+    // Build Kakao Order Text
+    function generateOrderString(totalCount, totalPrice, selectedItems) {
+      const now = new Date();
+      const dateStr = `${now.getFullYear()}.${now.getMonth() + 1}.${now.getDate()}`;
+
+      if (totalCount === 0) {
+        return `[상스공방 당일 배송 수제 쿠키 주문 문의]
+날짜: ${dateStr}
+안녕하세요! 상스공방 수제 쿠키 주문 문의드립니다.
+
+- 주문 원하시는 품목:
+1) 초코칩 쿠키: 개
+2) 말차 쿠키: 개
+3) 솔티드 캐러멜 쿠키: 개
+
+- 수령 방식 (당일 택배 배송 / 매장 픽업): 
+- 성함 및 연락처: `;
+      }
+
+      let itemListStr = selectedItems.map(item => `· ${item}`).join('\n');
+      let packaging = totalCount >= 6 ? '고급 선물 상자 무료 포장' : '개별 크라프트 포장';
+
+      return `[상스공방 당일 배송 수제 쿠키 주문서]
+주문 일자: ${dateStr}
+주문 내역:
+${itemListStr}
+────────────────
+총 수량: ${totalCount}개
+결제 예정 금액: ${formatWon(totalPrice)}
+포장: ${packaging}
+
+- 성함: 
+- 연락처: 
+- 수령 방식: 당일 택배 배송 (주소 기재) / 매장 방문 픽업
+- 배송지 주소 / 픽업 희망 일시: 
+────────────────
+상스공방 사장님께 전달해 주시면 확인 후 즉시 접수됩니다.`;
+    }
+
+    function updateModalText(totalCount, totalPrice, selectedItems) {
+      const modalTextEl = document.getElementById('modalOrderText');
+      if (modalTextEl) {
+        modalTextEl.textContent = generateOrderString(totalCount, totalPrice, selectedItems);
+      }
+    }
+
+    // Open Modal
+    function openOrderModal() {
+      let totalCount = 0;
+      for (const key of Object.keys(products)) {
+        totalCount += products[key].qty;
+      }
+      if (totalCount === 0) {
+        products.chocochip.qty = 1;
+        products.matcha.qty = 1;
+        products.caramel.qty = 1;
+        document.getElementById('qty-chocochip').textContent = '1';
+        document.getElementById('qty-matcha').textContent = '1';
+        document.getElementById('qty-caramel').textContent = '1';
+        updateOrderCalculations();
+      }
+
+      const modal = document.getElementById('orderModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    // Close Modal
+    function closeOrderModal() {
+      const modal = document.getElementById('orderModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleBackdropClick(event) {
+      if (event.target.id === 'orderModal') {
+        closeOrderModal();
+      }
+    }
+
+    // Show Toast
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      if (toast && toastMsg) {
+        toastMsg.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3200);
+      }
+    }
+
+    // Copy and Open Kakao
+    function copyAndOpenKakao() {
+      const modalTextEl = document.getElementById('modalOrderText');
+      const orderText = modalTextEl ? modalTextEl.textContent : '';
+
+      navigator.clipboard.writeText(orderText).then(() => {
+        showToast('주문서가 복사되었습니다! 카카오톡 채널로 이동합니다.');
+        setTimeout(() => {
+          window.open('https://pf.kakao.com', '_blank');
+        }, 600);
+      }).catch(() => {
+        const textarea = document.createElement('textarea');
+        textarea.value = orderText;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast('주문서가 복사되었습니다! 카카오톡 채널로 이동합니다.');
+        setTimeout(() => {
+          window.open('https://pf.kakao.com', '_blank');
+        }, 600);
+      });
+    }
+
+    // Copy Kakao Channel ID
+    function copyKakaoId() {
+      navigator.clipboard.writeText('@상스공방').then(() => {
+        showToast('카카오톡 채널 ID(@상스공방)가 복사되었습니다.');
+      }).catch(() => {
+        showToast('카카오톡 채널 검색창에 "@상스공방"을 검색해 주세요.');
+      });
+    }
+
+    // Direct Kakao Order Handler
+    function handleKakaoOrder(event) {
+      event.preventDefault();
+      openOrderModal();
+    }
+
+    // Initialize state
+    document.addEventListener('DOMContentLoaded', () => {
+      updateOrderCalculations();
+    });
+  </script>
+</body>
+</html>
